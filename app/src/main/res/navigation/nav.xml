@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/listPokeFragment">
+
+    <fragment
+        android:id="@+id/listPokeFragment"
+        android:name="com.rago.pokedex.ui.listpoke.ListPokeFragment"
+        android:label="fragment_list_poke"
+        tools:layout="@layout/fragment_list_poke" >
+        <action
+            android:id="@+id/action_listPokeFragment_to_detailsPokeFragment"
+            app:destination="@id/detailsPokeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsPokeFragment"
+        android:name="com.rago.pokedex.ui.detailspoke.DetailsPokeFragment"
+        android:label="fragment_details_poke"
+        tools:layout="@layout/fragment_details_poke" />
+</navigation>
