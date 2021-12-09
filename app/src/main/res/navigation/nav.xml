@@ -18,5 +18,9 @@
         android:id="@+id/detailsPokeFragment"
         android:name="com.rago.pokedex.ui.detailspoke.DetailsPokeFragment"
         android:label="fragment_details_poke"
-        tools:layout="@layout/fragment_details_poke" />
+        tools:layout="@layout/fragment_details_poke" >
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
 </navigation>

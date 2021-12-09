@@ -17,6 +17,8 @@ class ListPokeViewModel(private val listPokemonRepository: ListPokemonRepository
 
     private var _listPokemon = MutableLiveData<List<ItemPoke>>()
     val listPokemon: LiveData<List<ItemPoke>> = _listPokemon
+    private var _message = MutableLiveData<String>()
+    val message: LiveData<String> = _message
 
     fun getAllPokemon() {
 
@@ -29,7 +31,7 @@ class ListPokeViewModel(private val listPokemonRepository: ListPokemonRepository
                 }
 
                 override fun onFailure(call: Call<CustomJson>, t: Throwable) {
-                    println("Error")
+                    _message.postValue("Error en el API")
                 }
 
             })

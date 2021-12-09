@@ -8,5 +8,9 @@ data class Pokemon(
     @SerializedName("name")
     var name: String,
     @SerializedName("sprites")
-    var sprites: Sprites
-)
+    var sprites: Sprites,
+    @SerializedName("id")
+    var id: Int
+){
+    fun getId():String = "# $id"
+}

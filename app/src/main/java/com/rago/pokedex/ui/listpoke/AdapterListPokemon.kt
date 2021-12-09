@@ -2,6 +2,7 @@ package com.rago.pokedex.ui.listpoke
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +18,14 @@ class AdapterListPokemon :
 
         fun bind(item: ItemPoke) {
             binding.pokemon = item
+            binding.cardDetails.setOnClickListener {
+                it.findNavController()
+                    .navigate(
+                        ListPokeFragmentDirections.actionListPokeFragmentToDetailsPokeFragment(
+                            item.url
+                        )
+                    )
+            }
         }
 
         companion object {
